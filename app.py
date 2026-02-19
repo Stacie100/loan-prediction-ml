@@ -20,16 +20,16 @@ credit_history = st.selectbox("Credit History", [1, 0])
 property_area = st.selectbox("Property Area", ["Urban", "Semiurban", "Rural"])
 
 input_data = pd.DataFrame({
-    'female_Male':              [1 if gender == "Male" else 0],
     'married':                  [1 if married == "Yes" else 0],
     'dependents':               [dependents],
-    'education_Not Graduate':   [1 if education == "Not Graduate" else 0],
     'self_employed':            [1 if self_employed == "Yes" else 0],
     'applicantincome':          [applicant_income],
     'coapplicantincome':        [coapplicant_income],
     'loanamount':               [loan_amount],
     'loan_amount_term':         [loan_amount_term],
     'credit_history':           [credit_history],
+    'female_Male':              [1 if gender == "Male" else 0],
+    'education_Not Graduate':   [1 if education == "Not Graduate" else 0],
     'property_area_Semiurban':  [1 if property_area == "Semiurban" else 0],
     'property_area_Urban':      [1 if property_area == "Urban" else 0],
 })
