@@ -39,7 +39,7 @@ with col2:
     applicant_income = st.number_input("Applicant Income ($)", min_value=0, value=5000)
     coapplicant_income = st.number_input("Coapplicant Income ($)", min_value=0, value=0)
     loan_amount = st.number_input("Loan Amount ($)", min_value=0, value=150)
-    loan_term = st.number_input("Loan Term (months)", min_value=0, value=360)
+    loan_term = st.number_input("Loan Term (months)", min_value=0, value=36)
     credit_history = st.selectbox("Credit History", ["Good (1.0)", "Bad (0.0)"])
     property_area = st.selectbox("Property Area", ["Urban", "Semiurban", "Rural"])
 
