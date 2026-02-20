@@ -3,6 +3,7 @@ import joblib
 import pandas as pd
 
 model = joblib.load("model/loan_model.pkl")
+scaler = joblib.load("model/scaler.pkl")
 
 st.title("🏦 Loan Prediction App")
 st.write("Fill in the details below to predict loan approval.")
@@ -33,6 +34,9 @@ input_data = pd.DataFrame({
     'property_area_Semiurban':  [1 if property_area == "Semiurban" else 0],
     'property_area_Urban':      [1 if property_area == "Urban" else 0],
 })
+
+numeric_cols = ['applicantincome', 'coapplicantincome', 'loanamount', 'loan_amount_term']
+input_data[numeric_cols] = scaler.transform(input_data[numeric_cols])
 
 if st.button("Predict"):
     prob = model.predict_proba(input_data)[:, 1][0]
